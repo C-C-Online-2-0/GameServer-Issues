@@ -1,0 +1,108 @@
+name: Bug report
+description: Report a problem with the C&C Online game servers.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve the C&C Online game servers. Please search existing issues first, and check Discord for announced outages or maintenance.
+        Problems with the Tacitus client itself belong in [Tacitus-Issues](https://github.com/C-C-Online-2-0/Tacitus-Issues).
+        Do **not** include passwords, tokens, email addresses, IP addresses, or security vulnerabilities in this form.
+  - type: dropdown
+    id: game
+    attributes:
+      label: Game
+      description: Which game were you playing when the problem happened?
+      options:
+        - Not game-specific
+        - "C&C: Red Alert 3"
+        - "C&C 3: Tiberium Wars"
+        - "C&C 3: Kane's Wrath"
+        - "The Battle for Middle-earth"
+        - "The Battle for Middle-earth II"
+        - "The Lord of the Rings: The Rise of the Witch-king"
+    validations:
+      required: true
+  - type: dropdown
+    id: affected_area
+    attributes:
+      label: Affected area
+      description: Which part of the online services has the problem?
+      options:
+        - Login or account
+        - Lobby, chat, or friends
+        - Hosting or joining games
+        - Connection or disconnects
+        - Another area
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen instead. Include any error message shown in game.
+      placeholder: I expected ... but instead ...
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that reliably produces the problem.
+      placeholder: |
+        1. Log in
+        2. Join lobby ...
+        3. See ...
+    validations:
+      required: true
+  - type: input
+    id: when
+    attributes:
+      label: When did it happen?
+      description: Date and approximate time, including your time zone. This helps the team find the matching server logs.
+      placeholder: e.g. 2026-10-27 21:30 CET
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Happened once
+    validations:
+      required: true
+  - type: input
+    id: username
+    attributes:
+      label: In-game name
+      description: Optional. The online name you were using, if it helps the team investigate.
+    validations:
+      required: false
+  - type: input
+    id: tacitus_version
+    attributes:
+      label: Tacitus version
+      description: Shown on the splash screen when Tacitus starts, and in the Tacitus log file.
+      placeholder: e.g. 1.4.2
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, screenshots, or additional context
+      description: Attach error messages, logs, or screenshots. Remove any personal data before posting.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and this has not been reported yet.
+          required: true
+        - label: This is a server problem, not a problem with the Tacitus client itself.
+          required: true
